@@ -21,7 +21,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: actors; Type: TABLE; Schema: public; Owner: rishabhgajra
+-- Name: actors; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.actors (
@@ -32,10 +32,10 @@ CREATE TABLE public.actors (
 );
 
 
-ALTER TABLE public.actors OWNER TO rishabhgajra;
+ALTER TABLE public.actors OWNER TO postgres;
 
 --
--- Name: actors_id_seq; Type: SEQUENCE; Schema: public; Owner: rishabhgajra
+-- Name: actors_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.actors_id_seq
@@ -47,17 +47,17 @@ CREATE SEQUENCE public.actors_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.actors_id_seq OWNER TO rishabhgajra;
+ALTER TABLE public.actors_id_seq OWNER TO postgres;
 
 --
--- Name: actors_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rishabhgajra
+-- Name: actors_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.actors_id_seq OWNED BY public.actors.id;
 
 
 --
--- Name: movies; Type: TABLE; Schema: public; Owner: rishabhgajra
+-- Name: movies; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.movies (
@@ -68,10 +68,10 @@ CREATE TABLE public.movies (
 );
 
 
-ALTER TABLE public.movies OWNER TO rishabhgajra;
+ALTER TABLE public.movies OWNER TO postgres;
 
 --
--- Name: movies_id_seq; Type: SEQUENCE; Schema: public; Owner: rishabhgajra
+-- Name: movies_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.movies_id_seq
@@ -83,31 +83,31 @@ CREATE SEQUENCE public.movies_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.movies_id_seq OWNER TO rishabhgajra;
+ALTER TABLE public.movies_id_seq OWNER TO postgres;
 
 --
--- Name: movies_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rishabhgajra
+-- Name: movies_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.movies_id_seq OWNED BY public.movies.id;
 
 
 --
--- Name: actors id; Type: DEFAULT; Schema: public; Owner: rishabhgajra
+-- Name: actors id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.actors ALTER COLUMN id SET DEFAULT nextval('public.actors_id_seq'::regclass);
 
 
 --
--- Name: movies id; Type: DEFAULT; Schema: public; Owner: rishabhgajra
+-- Name: movies id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.movies ALTER COLUMN id SET DEFAULT nextval('public.movies_id_seq'::regclass);
 
 
 --
--- Data for Name: actors; Type: TABLE DATA; Schema: public; Owner: rishabhgajra
+-- Data for Name: actors; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.actors (id, name, age, gender) FROM stdin;
@@ -117,7 +117,7 @@ COPY public.actors (id, name, age, gender) FROM stdin;
 
 
 --
--- Data for Name: movies; Type: TABLE DATA; Schema: public; Owner: rishabhgajra
+-- Data for Name: movies; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.movies (id, title, release_date, genre) FROM stdin;
@@ -128,21 +128,21 @@ COPY public.movies (id, title, release_date, genre) FROM stdin;
 
 
 --
--- Name: actors_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rishabhgajra
+-- Name: actors_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.actors_id_seq', 11, true);
 
 
 --
--- Name: movies_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rishabhgajra
+-- Name: movies_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.movies_id_seq', 11, true);
 
 
 --
--- Name: actors actors_pkey; Type: CONSTRAINT; Schema: public; Owner: rishabhgajra
+-- Name: actors actors_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.actors
@@ -150,7 +150,7 @@ ALTER TABLE ONLY public.actors
 
 
 --
--- Name: movies movies_pkey; Type: CONSTRAINT; Schema: public; Owner: rishabhgajra
+-- Name: movies movies_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.movies
