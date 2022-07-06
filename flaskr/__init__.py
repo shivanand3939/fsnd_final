@@ -5,7 +5,7 @@ import sys
 import datetime
 from werkzeug.exceptions import HTTPException, NotFound, PreconditionFailed
 from .auth.auth import requires_auth, AuthError
-
+import traceback
 
 def create_app(test_config=None):
     app = Flask(__name__)
@@ -39,12 +39,14 @@ def create_app(test_config=None):
             movies = Movie.query.all()
             if len(movies) == 0:
                 abort(404)
+            print(movies)
             movies = [movie.get_formatted_json() for movie in movies]
             print(movies)
             return jsonify({"success": True,
                             "movies": movies})
         except Exception as e:
             print(e)
+            print(traceback.format_exc())
             x = str(e)[:3]
             abort(int(x))
 
@@ -291,4 +293,4 @@ def create_app(test_config=None):
 app = create_app()
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)

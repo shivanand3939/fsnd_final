@@ -178,5 +178,5 @@ def requires_auth(permission=''):
     return requires_auth_decorator
 
 
-print('\n\nAssistant', verify_decode_jwt(ASSISTANT_TOKEN), '\n\nDirector', verify_decode_jwt(
-    DIRECTOR_TOKEN), '\n\nProducer', verify_decode_jwt(PRODUCER_TOKEN), '\n\n')
+# print('\n\nAssistant', verify_decode_jwt(ASSISTANT_TOKEN), '\n\nDirector', verify_decode_jwt(
+#     DIRECTOR_TOKEN), '\n\nProducer', verify_decode_jwt(PRODUCER_TOKEN), '\n\n')
