@@ -4,11 +4,13 @@
 
 The Casting Agency models a company that is responsible for creating movies and managing and assigning actors to those movies. You are an Executive Producer within the company and are creating a system to simplify and streamline your process.
 
-## Motivation for project
+## Motivations for this project
+ I wanted to explore the this dataset for multiple reasons.. I am short on time and this template gave me a good framework to begin with.. secondly the earlier concepts taught in the course were already covered in previous projects.. I wanted to explore the handons approach of using Heroku.. and I learnt a good deal about Heroku via this course / project. This is the capstone project of Udacity fullstack nanodegree program, which demonstrate the skillset of using Flask, SQLAlchemy, Auth0, gunicorn and heroku to develop and deploy a RESTful API.
 
-This is the capstone project of Udacity fullstack nanodegree program, which demonstrate the skillset of using Flask, SQLAlchemy, Auth0, gunicorn and heroku to develop and deploy a RESTful API. 
 
-## Getting Started
+URL location for the hosted API: https://fsnd-project.herokuapp.com/
+
+
 
 ### Installing Dependencies
 
@@ -38,7 +40,7 @@ This will install all of the required packages we selected within the `requireme
 
 - [Flask-CORS](https://flask-cors.readthedocs.io/en/latest/#) is the extension we'll use to handle cross origin requests from our frontend server.
 
-## Database Setup
+##  Local Database Setup
 
 With Postgres running, restore a database using the trivia.psql file provided. From the backend folder in terminal run:
 
@@ -49,16 +51,24 @@ psql casting_agency<casting_agency.psql
 more info here:
 https://www.linode.com/docs/databases/postgresql/how-to-back-up-your-postgresql-database/#:~:text=PostgreSQL%20provides%20the%20pg_dump%20utility,you%20intend%20to%20back%20up.&text=Dump%20the%20contents%20of%20a,database%20to%20be%20backed%20up.
 
-## Running the server
+## Local Running the server
 
 From within the directory first ensure you are working using your created virtual environment.
 
 To run the server, execute:
 
+```
+chmod +x setup.sh
+source ./setup.sh
+./setup.sh
+flask run
+
+```
+<!--
 ```bash
 . ./setup.sh
 flask run
-```
+``` -->
 
 #### Flask run tests the token headers set for the enviroment. If they have expired, you need to login using the crededntials below and replace them in setup.sh and run setup.sh again
 
@@ -98,7 +108,7 @@ eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJWRXNSUnYwWUZRUDdtU3g5VGJ0TSJ9.eyJ
 
 ## Testing
 
-To run the tests, run
+To run the tests locally, run
 
 ```
 dropdb casting_agency_test
@@ -106,6 +116,13 @@ createdb casting_agency_test
 psql casting_agency_test<casting_agency_test.psql
 python test_flaskr.py
 ```
+
+To run the tests hosted on the instance
+```
+python test_flaskr.py
+
+```
+
 
 The tests print data returned from the APIs along with API logs.
 
@@ -270,4 +287,4 @@ Success Response:
 
 ## Authors
 
-Rishabh Gajra and The udacity team that made the starter code and Project tasks.
+Rishabh Gajra and The udacity team that made the starter code and Project tasks. Improved upon it by T.Shivanand
