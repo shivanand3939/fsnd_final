@@ -72,11 +72,7 @@ flask run
 
 #### Flask run tests the token headers set for the enviroment. If they have expired, you need to login using the crededntials below and replace them in setup.sh and run setup.sh again
 
-setup.sh has all the environment variables needed for the project. The app may fail if they are not set properly. If that happens just copy paste lines from setup.sh on you CLI.
-
-# Project deployed at
-
-https://fsnd-casting-agency-udacity.herokuapp.com/
+setup.sh has all the environment variables needed for the project. The app may fail if they are not set properly. If that happens just copy paste lines from setup.sh on you CLI. 
 
 ###### To test live APIs the only way right now to do this is curl requests. Add Auth token headers from logins below to test.
 
@@ -105,6 +101,39 @@ Executive Producer executiveproducer@example.com Qwerty1234
 ```
 eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJWRXNSUnYwWUZRUDdtU3g5VGJ0TSJ9.eyJpc3MiOiJodHRwczovL2Rldi1mYzM0eTlscS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWYyMjRkNGQ1Yzg0OGYwMDM3YzQxNzFkIiwiYXVkIjoiQ2FzdGluZ0FnZW5jeUFQSSIsImlhdCI6MTU5NjE0MTUwNCwiZXhwIjoxNTk2MjI3OTAzLCJhenAiOiJYZXF3T3U2UHNBZUMwYndtMmRkNmdpTlAwSkphYXhJZSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiYWRkOmFjdG9ycyIsImFkZDptb3ZpZXMiLCJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInZpZXc6YWN0b3JzIiwidmlldzptb3ZpZXMiXX0.BgIe6xAaR5YqxM7j0NFjjLLctZnAKIp2x_q93sZPH8rBkCp3HjSDRLlqmz0KyeEwPyBMjLxQabbr3InJQk8OTq8S7rjoepgPs_zHF3mJrjUqZ3V3JaRX5_IvDf5J_-PfV-I6vxz42q1Mb1wMTBOHxOxj7MvtZ0JSycNGy3aRg1h0RsslV1Zyrcsx5cWk6xstpBylBEhaOTwbqHQTWZklWDE2eRnRAC3YYWrHpIy_xepcn8HNxfBoIFWr11SYxGMkYXEMqRDbQ8UqnUcUpOzxqMJXG913cf9YZegljhEiyZwPtsdlW92KNLNYKkLEPbTPXBwEQl_UmsD769fKc_egvA
 ```
+
+## Persmissions Associated to each Role:
+
+Casting Assistant
+- Can view actors and movies
+    - view:movies
+    - view:actors
+
+Casting Director
+- All permissions a Casting Assistant has and…
+    - view:movies
+    - view:actors
+- Add or delete an actor from the database
+    - add:actors
+    - delete:actors
+- Modify actors or movies
+    - patch:movies
+    - patch:actors
+
+
+Executive Producer
+- All permissions a Casting Director has and…
+    - view:movies
+    - patch:movies
+    - view:actors
+    - add:actors
+    - patch:actors
+    - delete:actors
+- Add or delete a movie from the database
+    - delete:movies
+    - add:movies
+
+
 
 ## Testing
 
